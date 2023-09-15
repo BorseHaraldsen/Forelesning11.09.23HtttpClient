@@ -21,7 +21,7 @@ public class HttpServer {
             // Allows for other people to connect to us.
 
             Socket clientSocket = serverSocket.accept(); // When someone connects to us. Called "blocking"
-            // .accept() Means wait until the client connects (break). Won't continue until connection happens..
+            // .accept() Means wait until the client connects (break). Won't continue until connection happens.
             requestLine = readLine(clientSocket);
 
             String headerLine;
