@@ -20,6 +20,10 @@ public class HttpServer {
 
             Socket clientSocket = serverSocket.accept(); // When someone connects to us. Called "blocking"
             // .accept() Means wait until the client connects (break). Won't continue until connection happens.
+
+            HttpRequestHandler requestHandler = new HttpRequestHandler(clientSocket);
+            requestHandler.start();
+
             HttpRequest request = new HttpRequest(clientSocket);
             HttpResponse response = new HttpResponse();
 
